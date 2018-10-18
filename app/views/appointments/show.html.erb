@@ -1,0 +1,3 @@
+This is the appointment date: <%=  link_to @appointment.appointment_datetime, appointment_path(@appointment) %>
+This is the appointment doctor: <%=  link_to @appointment.doctor.name, doctor_path(@appointment.doctor) %>
+This is the appointment patient: <%= link_to  @appointment.patient.name, patient_path(@appointment.patient)%>
