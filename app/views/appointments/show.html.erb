@@ -1,0 +1,8 @@
+<h1>Appointment Details: </h1>
+
+<%= label_tag 'Patient: ' %>
+<%= link_to @appointment.patient.name, patient_path(@appointment.patient) %><br>
+<%= label_tag 'Doctor: ' %>
+<%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor) %><br>
+<%= label_tag 'Date & Time: ' %>
+<%= link_to @appointment.appointment_datetime.strftime("%B %d, %Y"), appointment_path(@appointment) %>
