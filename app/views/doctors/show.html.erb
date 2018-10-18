@@ -1,0 +1,17 @@
+<h2><%= @doctor.name %></h2>
+
+<%= label_tag 'Department: ' %><br/>
+<%= @doctor.department %><br/><br/>
+
+<%= label_tag 'Appointments: ' %><br/>
+<%= pluralize(@doctor.appointments_count, 'appointment')%><br/><br/>
+
+<%= label_tag 'Patients: ' %>
+<ul>
+  <% @doctor.appointments.each do |appoin| %>
+    <li>
+      <%= link_to appoin.patient.name, patient_path(appoin.patient) %>
+      <%= link_to appoin.appointment_datetime.strftime("%B %d, %Y at %H:%M") %><br>
+    </li>
+  <% end %>
+</ul>
